@@ -1,0 +1,65 @@
+<div class="bootstrap-wrapper">
+  <div class="row">
+      <div class="col-md-12">
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>Add questions to {{title}}!</h1>
+          </div>
+          <div class="col-md-6">
+        
+  <a class="mt20 text-center" mat-raised-button color=""
+  [routerLink]="['/admin/add-question/'+id+'/'+title]"> <mat-icon>add</mat-icon> Questions</a>
+          </div>
+        </div>
+      </div>
+
+<div class="bootstrap-wrapper">
+    <div class="row">
+        <div class="col-md-12" *ngIf="questions && questions.length > 0">
+          <mat-card>
+          <mat-card-content *ngFor=" let q of questions ; let i=index">
+          <p><b> Q{{i+1}})</b><span class="mt20" [innerHTML]="q.content"></span></p> 
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b> 1)</b><span class="mt20" [innerHTML]="q.option1"></span></p> 
+                </div>
+                <div class="col-md-6">
+                  <p><b> 2)</b><span class="mt20" [innerHTML]="q.option2"></span></p> 
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b> 3)</b><span class="mt20" [innerHTML]="q.option3"></span></p> 
+                </div>
+                <div class="col-md-6">
+                  <p><b> 4)</b><span class="mt20" [innerHTML]="q.option4"></span></p> 
+                </div>
+              </div>
+              <mat-divider></mat-divider>
+              <div class="mt20">
+                <p><b>Correct Answer:</b> {{q.answer}}</p>
+              </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="example-button-row" >
+              <div class="example-flex-container">
+                <div class="example-button-container" >
+                  <button (click)="deleteQuestion(q.id!)" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+                <div class="example-button-container">
+                  <button   [routerLink]="['/admin/update-question/'+q.id]" mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+                    <mat-icon>update</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+        </mat-card-content>
+       
+      </mat-card>
+        </div>
+    </div>
+</div>

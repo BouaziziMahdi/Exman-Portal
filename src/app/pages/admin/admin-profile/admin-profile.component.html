@@ -1,0 +1,48 @@
+<mat-card>
+<h1 style="text-align: center ;padding: 4px;">admin-profile </h1>
+<mat-card-content>
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div class="container text-center"> 
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="profile_img" class="rounded-circle" >
+                
+            </div>
+             <div class="container text-center ">
+                <h4>{{userName}}</h4>
+             </div>
+          
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div>
+                        <table class="table table-bordered">
+                          <thead>
+                            <tr>     
+                                <th scope="col">userName</th>
+                              <th scope="col">Firstname</th>
+                              <th scope="col">lastname</th>
+                              <th scope="col">role</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr >
+                                <td>{{userName}}</td>
+                                <td> {{userDto.firstname}}</td>
+                                <td> {{userDto.lastname}}</td>
+                                <td>{{role}}</td>
+                            
+                            </tr>
+                          </tbody>
+                            <button mat-button (click)="update()"  class="btn" mat-button color="primary">update</button>
+                            <button mat-button class="btn" (click)="cancel()"> cancel </button>
+                          
+                        </table>
+                      </div>
+                    </div>  
+            </div>
+            </div>
+        </div>
+     
+</mat-card-content>
+</mat-card>

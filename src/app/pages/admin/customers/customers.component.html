@@ -1,0 +1,76 @@
+<div class="p-3">
+  <h2>Bank customers</h2>
+  <div class="d-flex justify-content-end mb-3">
+    <div class="form-check form-switch">
+      <label class="form-check-label" for="flexSwitchCheckChecked">Show inactive users only</label>
+      <input [(ngModel)]="showInactiveUserOnly" (change)="filterCustomers()" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+    </div>
+  </div>
+  <div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">State</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cus of customers">
+          <td>{{cus.firstname}}</td>
+          <td>{{cus.lastname}}</td>
+          <td>
+            <span class="state-badge {{ cus.active ? 'active' : 'inactive' }}">
+              {{ cus.active ? 'Active' : 'Inactive' }}
+            </span>
+          </td>
+          <td class="cursor-pointer">
+            <div class="d-flex flex-row justify-content-start align-items-center">
+              <div class="form-check form-switch">
+                <input class="form-check-input"
+                       type="checkbox"
+                       [(ngModel)]="cus.active"
+                       [checked]="cus.active"
+                       (change)="changeUserState(cus.active, cus.id)"
+                       data-toggle="modal" data-target="#staticBackdrop"
+                >
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="bootstrap-wrapper">
+  <div class="container">
+      <div class="row" style="margin-top: 20px;">
+          <div class="col-md-6 offset-md-3">
+<!-- Modal -->
+<div class="modal-fade" id="staticBackdrop" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Confirm!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancelUpdate()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Would you really want to <span id="updateStateText">enable</span> this user?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn " (click)="cancelUpdate()" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn1" (click)="updateUserState()" data-dismiss="modal">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+      </div>
+  </div>

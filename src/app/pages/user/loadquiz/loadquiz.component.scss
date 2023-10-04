@@ -1,0 +1,19 @@
+.truncate{
+    display: block;
+    white-space: nowrap;
+    overflow:hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+}
+.example-card {
+    max-width: 400px;
+  }
+.example-header-image {
+    background-image: url('../../../../assets/quiz.png');
+    background-size: cover;
+  }
+  @media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}

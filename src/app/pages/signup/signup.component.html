@@ -1,0 +1,58 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6 offset-md-3">
+                <div class="container text-center">
+                    <img src="../../../assets/register-button-png-0.png" alt="logo" class="img-fluid" width="90px" height="90px">
+                </div>
+                <h1 class="text-center">Register Here</h1>
+                <form (ngSubmit)="register()">
+                  <div>
+                      <label for="firstname">First name</label>
+                      <input
+                        id="firstname"
+                        name="firstname"
+                        required type="text"
+                        [(ngModel)]="user.firstname"
+                      >
+                    </div>
+                    <div class="form-group">
+                      <label for="lastname">Last name</label>
+                      <input
+                        id="lastname"
+                        name="lastname"
+                        required type="text"
+                        [(ngModel)]="user.lastname"
+                      >
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input
+                        id="email"
+                        name="email"
+                        required type="text"
+                        [(ngModel)]="user.email"
+                      >
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input
+                        id="password"
+                        name="password"
+                        required type="password"
+                        [(ngModel)]="user.password"
+                      >
+                    </div>
+                     <div class="container">
+                        <div class="example-button-row text-center">
+                            <button  type="submit" mat-raised-button color="primary">Register</button>
+                            <button style="margin-left: 20px;" mat-raised-button color="" (click)="login()" >Login</button>
+                        </div>
+                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

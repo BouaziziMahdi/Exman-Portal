@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>
+        <div class="mat-subheader" >Menu</div>
+      </mat-card-title>
+    <mat-action-list>
+      <button  mat-list-item (click)="dashbord()" ><mat-icon mat-list-icon>home</mat-icon>Dashbord</button>
+      <button mat-list-item *ngFor="let c of categories" (click)="category(c.id)" >
+        <mat-icon mat-list-icon>category</mat-icon>{{c.title}}
+      </button>
+      <button mat-list-item (click)="logout()" ><mat-icon mat-list-icon>logout</mat-icon>logout</button>
+    </mat-action-list>
+    </mat-card>

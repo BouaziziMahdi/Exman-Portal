@@ -1,0 +1,16 @@
+<div class="category-card">
+    <div class="category-header">Toutes les catégories</div>
+    <ul class="category-list">
+      <li class="category-item" *ngFor="let c of categories">
+        <mat-icon class="category-icon">category</mat-icon>
+        <div class="category-details">
+          <div class="category-title">{{c.title}}</div>
+          <div class="category-description">{{c.description}}</div>
+        </div>        
+      </li>
+    </ul>
+    <div class="category-footer text-center mt20">
+      <button class="add-category-button" (click)="add()">Ajouter une catégorie</button>
+    </div>
+  </div>
+  

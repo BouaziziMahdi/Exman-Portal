@@ -1,0 +1,29 @@
+
+<div class="category-card" >
+    <div class="category-header">Toutes les Quizzes</div>
+    <div *ngFor="let c of quiz"> 
+    <ul class="category-list" >
+      <li class="category-item" >
+        <mat-icon class="category-icon">quiz</mat-icon>
+        <div class="category-details" >
+          <div class="category-title" >{{c.title}}</div>
+          <div class="category-description">{{c.description}}</div>
+        </div>        
+      </li>
+    </ul> 
+    <div class="button-container" >
+        <button class="button" [routerLink]="'/admin/view-quiz-questions/'+c.id+'/'+c.title" >Questions</button>
+        <button class="button">MarxMarks :{{c.maxMarks}}</button>
+        <button class="button">numberOfQuestion :{{c.numberOfQuestion}}</button>
+        <button class="button" (click)="updateQuiz(c.id!)">update</button>
+        <button class="button" >attempts</button>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <div class="example-button-container">
+              <button mat-fab color="accent"  (click)="deleteQuiz(c.id!)" aria-label="Example icon button with a delete icon">
+              <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+      </div>
+  </div>
+</div>

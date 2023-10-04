@@ -1,0 +1,98 @@
+.category-card {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .category-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .category-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-icon {
+    font-size: 24px;
+    color: #007bff;
+    margin-right: 15px;
+  }
+  
+  .category-details {
+    flex-grow: 1;
+  }
+  
+  .category-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .category-description {
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  .add-category-button {
+    background-color: #ff00ea;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px
+  }
+  
+  .add-category-button:hover {
+    background-color: #0056b3;
+  }
+  /* Style for the button container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center align buttons horizontally */
+    align-items: center; /* Center align buttons vertically */
+    margin-top: 20px; /* Add some space from the top */
+  }
+  
+  /* Style for each button */
+  .button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e304d4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s ease; /* Add smooth hover effect */
+  }
+  
+  /* Style for button hover effect */
+  .button:hover {
+    background-color: #a400b3; /* Darker background color on hover */
+  }
+  
+  /* Style for the last button to remove the right margin */
+  .button:last-child {
+    margin-right: 0;
+  }
+  

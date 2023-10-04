@@ -1,0 +1,18 @@
+
+<mat-toolbar color="accent">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu_book</mat-icon>
+    </button>
+    <span (click)="home()" style="cursor:alias;">Exmanportal</span>
+    <span class="example-spacer"></span>
+    <button   (click)="login()" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+    
+    </button>
+    <button    (click)="register()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>how_to_reg</mat-icon>
+    </button>
+    <div *ngIf="isLoggedIn()">
+    <span class="me-3" >{{ userName }} ({{ role }})</span>
+  </div>
+  </mat-toolbar>
